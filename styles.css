@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 40px 30px;
+    height: 100vh;
+    color: #fff;
+    background-color: #000;
+    font-family: "Trud Type", Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.2;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__button {
+    z-index: 2;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    top: -18px;
+    margin: 20px;
+    outline: none;
+    animation-duration: 300ms;
+    animation-timing-function: ease;
+}
+
+.header__button[data-open="true"] {
+    background-color: #000;
+    animation-name: scale;
+}
+
+.header__button[data-open="false"] {
+    transition: background-color 250ms linear;
+}
+
+@keyframes scale {
+    from {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+    }
+
+    to {
+        transform: scale(100%);
+        -webkit-transform: scale(100%);
+        -moz-transform: scale(100%);
+        -ms-transform: scale(100%);
+        -o-transform: scale(100%);
+    }
+}
+
+h1 {
+    font-size: 10vw;
+    font-weight: normal;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    font-family: 'Waste of time', sans-serif;                                        
+}
+
+h2 {
+        font-family: 'Waste of time', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.header__nav {
+    background-color: #fff;
+    position: fixed;
+    overflow: hidden;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    visibility: hidden;
+    clip-path: circle(var(--radius) at calc(100% - 55px) 47px);
+}
+
+.header__nav[data-active="true"] {
+    visibility: visible;
+}
+
+.header__menu {
+    padding: 0;
+    margin: 0;
+}
+
+.header__menu>.header__menu-item {
+    font-size: 12vh;
+    font-family: 'Waste of time', sans-serif;                                          
+}
+
+.header__menu>.header__menu-item:not(:last-of-type) {
+    margin-bottom: 0em;
+}
+
+.header__menu-item a {
+    letter-spacing: -4px;
+    font-weight: 300 !important;
+    font-size: 100%;
+    color: #000;
+    text-decoration: none;
+    opacity: 1;
+    transition: opacity 0.75s linear 0.1s;
+}
+
+.header__menu-item :hover {
+    opacity: 0.4;
+}
